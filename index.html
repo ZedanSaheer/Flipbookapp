@@ -50,8 +50,10 @@
           <small>Create, share and embed online Flipbooks converting your PDFs into flipping books.</small>
         </div>
         <form method="post" class="mainform">
-          <label for="actual-btn">Choose File</label>
-          <input type="file" accept=".pdf,.docx,.doc.txt">
+          <label class="file" for="file">
+            <input type="file" name="file" id="file" aria-label="File browser example" accept=".pdf,.txt,.doc,.docx,.ppt,.pptx">
+            <span class="file-custom"></span>
+          </label>
           <input type="button" value="Process" type="submit" class="margin-form button">
         </form>
       </div>
