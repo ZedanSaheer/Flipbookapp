@@ -160,7 +160,7 @@ small{
     padding: 20px 10px;
     height: 500px;
     line-height: 20px;
-    z-index:-1;
+    z-index: -1;
 }
 
 .features .fa, .fas {
@@ -234,6 +234,7 @@ h2 {
     .navlinks.responsive {
         opacity: 1;
         cursor: pointer;
+        pointer-events: all;
         transition: opacity .50s ease;
     }
     .navlinks-links {
