@@ -233,7 +233,7 @@ h2 {
     }
     .navlinks.responsive {
         opacity: 1;
-        cursor: none;
+        cursor: pointer;
         transition: opacity .50s ease;
     }
     .navlinks-links {
