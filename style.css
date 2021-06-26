@@ -94,9 +94,12 @@ section.conversion {
     text-align: center;
 }
 
-.maintext h1 {
+ h1 {
     font-size: 3rem;
-    font-weight: lighter;
+    color: black;
+}
+small{
+    color: black;
 }
 
 .mainform {
@@ -187,6 +190,9 @@ h2 {
 
 @media screen and (max-width: 600px) {
 
+    h2{
+        font-size: 3.5rem;
+    }
     .mainform {
         display: flex;
         justify-content: space-between;
@@ -221,6 +227,8 @@ h2 {
         background: black;
         opacity: 0;
         cursor: none;
+        user-select: none;
+        pointer-events: none;
     }
     .navlinks.responsive {
         opacity: 1;

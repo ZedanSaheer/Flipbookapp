@@ -21,6 +21,7 @@ realFileBtn.addEventListener("change", function () {
     } else {
         customTxt.innerHTML = "No file chosen, yet.";
     }
+    console.log(realFileBtn.files);
 });
 
 
@@ -28,6 +29,7 @@ realFileBtn.addEventListener("change", function () {
 const button = document.getElementById("button");
 const loading = document.getElementById("wrapperloading");
 button.addEventListener("click", activeLoad);
+
 
 function activeLoad() {
     if (realFileBtn.value) {
@@ -39,5 +41,5 @@ function activeLoad() {
         customTxt.innerHTML = "No file chosen, yet.";
         alert("No Document Added!")
     }
+    
 }
-
