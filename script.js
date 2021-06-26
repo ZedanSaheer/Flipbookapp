@@ -30,10 +30,14 @@ const loading = document.getElementById("wrapperloading");
 button.addEventListener("click", activeLoad);
 
 function activeLoad() {
-    if ( customTxt.innerHTML = "No file chosen, yet.") {
-        alert("Add Some Document");
+    if (realFileBtn.value) {
+        customTxt.innerHTML = realFileBtn.value.match(
+            /[\/\\]([\w\d\s\.\-\(\)]+)$/
+        )[1];
+        loading.classList.toggle("loadingactive")
     } else {
-        loading.classList.toggle("loadingactive");
+        customTxt.innerHTML = "No file chosen, yet.";
+        alert("No Document Added!")
     }
 }
 

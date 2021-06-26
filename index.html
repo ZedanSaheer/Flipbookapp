@@ -25,16 +25,14 @@
       height: 0;
       width: 100%;
       z-index: 999;
-      transition: height .80s ease;
+      transition: opacity .80s ease;
+      opacity: 0;
     }
 
     div.loadingactive {
+      opacity: 1 !important;
       height: 100vh !important;
-      transition: height .80s ease;
-    }
-
-    .loader-p {
-      color: black;
+      transition: opacity .80s ease;
     }
 
     .loader {
@@ -92,7 +90,7 @@
   <!--  loading screen -->
   <div id="wrapperloading">
     <div class="loader">
-      <p class="loader-p">PROCESSING YOUR FLIPBOOK</p>
+     PROCESSING YOUR FLIPBOOK
     </div>
   </div>
 
