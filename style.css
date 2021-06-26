@@ -109,7 +109,7 @@ section.conversion {
     width: 500px;
 }
 
-.file {
+/* .file {
     position: relative;
     display: inline-block;
     cursor: pointer;
@@ -164,12 +164,36 @@ section.conversion {
     border-radius: 0 .25rem .25rem 0;
 }
 
-/* Focus */
+/* Focus 
 
 .file input:focus~.file-custom {
     box-shadow: 0 0 0 .075rem #fff, 0 0 0 .2rem #0074d9;
 }
+ */
 
+ #real-file{
+     display: none;
+ }
+
+ #custom-button {
+    padding: 10px;
+    color: white;
+    background-color: #000000;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  #custom-button:hover {
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+  }
+  
+  #custom-text {
+    margin-left: 10px;
+    font-family: sans-serif;
+    color: rgb(255, 255, 255);
+  }
+  
 .margin-form {
     margin: 10px;
 }
@@ -180,6 +204,11 @@ section.conversion {
     background-color: black;
     border: none;
     border-radius: 5px;
+}
+
+.button:hover{
+    background-color: white;
+    color: black;
 }
 
 .feature-item {
@@ -239,7 +268,7 @@ h2 {
         font-size: 2.5rem;
     }
     .navlinks {
-        height: 100px;
+        height: 260px;
         padding: 40px;
         width: 100%;
         position: fixed;
@@ -258,6 +287,7 @@ h2 {
     }
     .navlinks-links {
         width: 100%;
+        border-top: 1px solid white;
     }
     .topnav .navlinks a:hover {
         background-color: black;

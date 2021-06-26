@@ -18,9 +18,84 @@
   <link rel="stylesheet" href="style.css">
   <link rel="icon" href="images/logo.png">
   <title>Flipping Book</title>
+  <style>
+    #wrapperloading {
+      position: fixed;
+      background-color: white;
+      height: 0;
+      width: 100%;
+      z-index: 999;
+      transition: height .80s ease;
+    }
+
+    div.loadingactive {
+      height: 100vh !important;
+      transition: height .80s ease;
+    }
+
+    .loader-p {
+      color: black;
+    }
+
+    .loader {
+      color: rgb(0, 0, 0);
+      font-family: "poppins", sans-serif;
+      font-size: 2rem;
+      height: 20vh;
+      left: 50%;
+      overflow: hidden;
+      padding-top: 7vh;
+      position: absolute;
+      text-align: center;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: 50vw;
+    }
+
+    .loader:before {
+      animation: left-to-right 3s alternate infinite linear;
+      background-image: linear-gradient(to right, transparent, rgb(0, 81, 255), transparent);
+      bottom: 0;
+      content: "";
+      height: 5vh;
+      left: 0;
+      overflow: hidden;
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+
+    .loader:after {
+      background-image: repeating-linear-gradient(90deg, white, white 1vw, transparent 1vw, transparent 10vw);
+      content: "";
+      height: 5vh;
+      left: 0;
+      overflow: hidden;
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+
+    @keyframes left-to-right {
+      0% {
+        transform: translateX(-100%);
+      }
+
+      100% {
+        transform: translateX(100%);
+      }
+    }
+  </style>
 </head>
 
 <body>
+  <!--  loading screen -->
+  <div id="wrapperloading">
+    <div class="loader">
+      <p class="loader-p">PROCESSING YOUR FLIPBOOK</p>
+    </div>
+  </div>
+
   <header>
     <nav>
 
@@ -30,11 +105,14 @@
         </div>
         <div class="navlinks">
           <div class="navlinks-links">
-          <a href="#" class="listnav">Conversion</a>
-        </div>
-        <div class="navlinks-links">
-          <a href="#" class="listnav">Features</a>
-        </div>
+            <a href="#" class="listnav">Conversion</a>
+          </div>
+          <div class="navlinks-links">
+            <a href="#" class="listnav">Features</a>
+          </div>
+          <div class="navlinks-links">
+            <a href="#" class="listnav">Login</a>
+          </div>
         </div>
         <a href="javascript:void(0);" class="icon" onclick="myFunction()">
           <i class="fa fa-bars"></i>
@@ -50,11 +128,16 @@
           <small>Create, share and embed online Flipbooks converting your PDFs into flipping books.</small>
         </div>
         <form method="post" class="mainform">
-          <label class="file" for="file">
+          <!--  <label class="file" for="file">
             <input type="file" name="file" id="file" aria-label="File browser example" accept=".pdf,.txt,.doc,.docx,.ppt,.pptx">
             <span class="file-custom"></span>
-          </label>
-          <input type="button" value="Process" type="submit" class="margin-form button">
+          </label> -->
+          <div class="files">
+            <input type="file" id="real-file" hidden="hidden" />
+            <button type="button" id="custom-button">CHOOSE A FILE</button>
+            <span id="custom-text">No file chosen, yet.</span>
+          </div>
+          <input type="button" value="Process" type="submit" class="margin-form button" id="button">
         </form>
       </div>
     </section>
